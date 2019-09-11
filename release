@@ -65,7 +65,7 @@ payload=$(
      --arg body "$BODY" \
      '{ tag_name: $tag, name: $name, body: $body, draft: true }'
 )
-
+echo $payload
 response=$(
   curl --fail \
        -u "$USERNAME:$PASSWORD" \

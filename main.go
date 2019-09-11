@@ -25,7 +25,7 @@ func main() {
 	cs := conn.ConnectionState()
 	if numCerts := len(cs.PeerCertificates); numCerts >= 1 {
 		root := cs.PeerCertificates[numCerts-1]
-		thumbprint := fmt.Sprintf("%x", sha1.Sum(root.Raw))
+		thumbprint := fmt.Sprintf("{\"thumbprint\":\"%x\"}", sha1.Sum(root.Raw))
 		fmt.Println(thumbprint)
 	}
 }
